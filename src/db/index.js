@@ -1,6 +1,10 @@
 import mongoose from "mongoose"
 import {DB_NAME} from "../constants.js"
 
+// While connecting to database, always use:
+// - async-await(as database is in another continent, so takes time), and 
+// - try-catch(because so many problems occur) 
+
 const connectDB = async () => {
     try {
         const connectionInstance = await mongoose.connect
